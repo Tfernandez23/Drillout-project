@@ -51,8 +51,11 @@ class CameraScreen(tk.Frame):
         self.video_label2 = tk.Label(self)
         self.video_label2.grid(row=1, column=1, padx=10, pady=10)
 
-        self.cap1 = cv2.VideoCapture(0)
-        self.cap2 = cv2.VideoCapture(0)
+        rtsp_url_camera1 = "rtsp://admin:csdUzHir14$@192.168.1.100:554/Streaming/Channels/102"
+        rtsp_url_camera2 = "rtsp://admin:csdUzHir14$@192.168.1.101:554/Streaming/Channels/102"
+
+        self.cap1 = cv2.VideoCapture(rtsp_url_camera1)
+        self.cap2 = cv2.VideoCapture(rtsp_url_camera2)
 
         self.current_frame1 = None
         self.current_frame2 = None
